@@ -1,38 +1,112 @@
-.App {
+.change-theme-btn {
+  border-radius: 10px;
+  color: var(--background);
+  background-color: var(--text-primary);
+  border: 2px var(--text-primary) solid;
+  float: right;
+  height: 3vh !important;
+  transition: all .5s ease;
+}
+
+.change-theme-btn:hover {
+  border: 4px royalblue solid;
+}
+
+.movie-app {
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-size: large;
+  font-weight: bold;
+  padding: 20px;
+  height: 100%;
+  transition: all .5s;
+}
+
+.movie-app > .row {
+  overflow-x: auto;
+  flex-wrap: nowrap;
+}
+
+.movie {
+  height: 100%;
+  width: auto;
+}
+
+.image-container {
+  position: relative;
+  transition: transform 0.2s;
+}
+
+.image-container:hover {
+ cursor: pointer;
+ transform: scale(1.1);
+}
+
+.overlay {
+  position: absolute;
+  background: var(--background-08);
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 20px;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.overlay-Name {
+  position: absolute;
+  background: var(--background-08);
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.image-container:hover .overlay-Name{
+  opacity: 1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.image-container:hover .overlay{
+  opacity: 1;
+}
+
+.heart-ico {
+  margin-left: 5px !important;
+  margin-top: 5px !important;
+}
+
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
+}
+.social{
+  transition: all .5s;
 }
 
-.App-link {
-  color: #61dafb;
+.social:hover {
+  color: royalblue;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-height: 600px) {
+  .movie-app {
+    color: var(--text-primary);
+    background-color: var(--background);
+    font-size: large;
+    font-weight: bold;
+    padding: 20px;
+    height: 100vh;
+    transition: all .5s;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  
 }
